@@ -53,12 +53,10 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
               <div className="text-lg font-semibold text-gray-900">Климат29</div>
-              <div className="hidden md:flex items-center gap-4">
-                {cities.map((city) => (
-                  <Badge key={city} variant="outline" className="text-sm">
-                    {city}
-                  </Badge>
-                ))}
+              <div className="hidden md:block">
+                <div className="text-sm text-gray-600">
+                  {cities.join(' • ')}
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
