@@ -83,7 +83,7 @@ const Index = () => {
                 <span className="block text-primary">любой сложности</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Профессиональный монтаж, техническое обслуживание и ремонт 
+                Профессиональный монтаж, обслуживание и ремонт 
                 систем кондиционирования в Архангельской области
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
