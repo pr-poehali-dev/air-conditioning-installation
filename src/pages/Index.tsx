@@ -60,31 +60,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Top Contact Bar */}
-      <div className="bg-primary text-white py-3">
+      <div className="bg-primary text-white py-2">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Icon name="MapPin" size={16} />
-                <span className="text-sm font-medium">Работаем в городах:</span>
-              </div>
-              <div className="flex items-center gap-4">
-                {cities.map((city) => (
-                  <span key={city} className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium">
-                    {city}
-                  </span>
-                ))}
-              </div>
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-2 text-center">
+            <div className="flex items-center gap-3">
+              <Icon name="MapPin" size={14} />
+              <span className="text-sm">{cities.join(' • ')}</span>
             </div>
+            <div className="hidden lg:block text-white/50">|</div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Icon name="Phone" size={16} />
-                <a href="tel:+79115909175" className="font-semibold hover:underline">+7 (911) 590-91-75</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="MessageCircle" size={16} />
-                <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">WhatsApp</a>
-              </div>
+              <a href="tel:+79115909175" className="flex items-center gap-1 text-sm hover:underline">
+                <Icon name="Phone" size={14} />
+                +7 (911) 590-91-75
+              </a>
+              <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm hover:underline">
+                <Icon name="MessageCircle" size={14} />
+                WhatsApp
+              </a>
             </div>
           </div>
         </div>
