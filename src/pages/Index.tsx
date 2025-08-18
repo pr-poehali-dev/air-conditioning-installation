@@ -59,6 +59,36 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Top Contact Bar */}
+      <div className="bg-primary text-white py-3">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <Icon name="MapPin" size={16} />
+                <span className="text-sm font-medium">Работаем в городах:</span>
+              </div>
+              <div className="flex items-center gap-4">
+                {cities.map((city) => (
+                  <span key={city} className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium">
+                    {city}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Icon name="Phone" size={16} />
+                <a href="tel:+79115909175" className="font-semibold hover:underline">+7 (911) 590-91-75</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="MessageCircle" size={16} />
+                <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Header */}
       <header className="bg-white border-b shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -97,7 +127,7 @@ const Index = () => {
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Профессиональный монтаж, обслуживание и ремонт 
-                систем кондиционирования в Архангельской области
+                систем кондиционирования в Северодвинске, Архангельске и Новодвинске
               </p>
               
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -245,8 +275,19 @@ const Index = () => {
                     <Icon name="Phone" size={24} className="text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">+7 (8182) 123-45-67</div>
+                    <div className="font-semibold text-lg">+7 (911) 590-91-75</div>
                     <div className="text-blue-100">Работаем круглосуточно</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                    <Icon name="MessageCircle" size={24} className="text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-lg">WhatsApp</div>
+                    <div className="text-blue-100">
+                      <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="hover:underline">+7 (911) 590-91-75</a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -263,7 +304,7 @@ const Index = () => {
                     <Icon name="MapPin" size={24} className="text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">Архангельская область</div>
+                    <div className="font-semibold text-lg">Города обслуживания</div>
                     <div className="text-blue-100">{cities.join(', ')}</div>
                   </div>
                 </div>
@@ -346,9 +387,10 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>+7 (8182) 123-45-67</li>
+                <li>+7 (911) 590-91-75</li>
+                <li>WhatsApp: +7 (911) 590-91-75</li>
                 <li>info@klimat29.ru</li>
-                <li>г. Архангельск</li>
+                <li>Северодвинск, Архангельск, Новодвинск</li>
                 <li>Работаем круглосуточно</li>
               </ul>
             </div>
