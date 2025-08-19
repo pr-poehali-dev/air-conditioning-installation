@@ -266,7 +266,7 @@ const Index = () => {
                 Получите бесплатную консультацию и точный расчет стоимости
               </p>
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
+                <a href="tel:+79115909175" className="flex items-center gap-4 hover:bg-white/10 p-3 rounded-lg transition-colors">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <Icon name="Phone" size={24} className="text-white" />
                   </div>
@@ -274,18 +274,16 @@ const Index = () => {
                     <div className="font-semibold text-lg">+7 (911) 590-91-75</div>
                     <div className="text-blue-100">Работаем круглосуточно</div>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
+                </a>
+                <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:bg-white/10 p-3 rounded-lg transition-colors">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <Icon name="MessageCircle" size={24} className="text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-lg">WhatsApp</div>
-                    <div className="text-blue-100">
-                      <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="hover:underline">+7 (911) 590-91-75</a>
-                    </div>
+                    <div className="text-blue-100">+7 (911) 590-91-75</div>
                   </div>
-                </div>
+                </a>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <Icon name="Mail" size={24} className="text-white" />
@@ -363,12 +361,12 @@ const Index = () => {
                 Профессиональные услуги по установке и обслуживанию кондиционеров в Архангельской области
               </p>
               <div className="flex gap-4">
-                <Button variant="outline" size="sm" className="border-gray-600 text-gray-400 hover:text-white">
+                <a href="tel:+79115909175" className="inline-flex items-center justify-center h-9 w-9 border border-gray-600 text-gray-400 hover:text-white hover:border-white rounded-md transition-colors">
                   <Icon name="Phone" size={16} />
-                </Button>
-                <Button variant="outline" size="sm" className="border-gray-600 text-gray-400 hover:text-white">
-                  <Icon name="Mail" size={16} />
-                </Button>
+                </a>
+                <a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-9 w-9 border border-gray-600 text-gray-400 hover:text-white hover:border-white rounded-md transition-colors">
+                  <Icon name="MessageCircle" size={16} />
+                </a>
               </div>
             </div>
             <div>
@@ -383,9 +381,9 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>+7 (911) 590-91-75</li>
-                <li>WhatsApp: +7 (911) 590-91-75</li>
-                <li>info@klimat29.ru</li>
+                <li><a href="tel:+79115909175" className="hover:text-white transition-colors">+7 (911) 590-91-75</a></li>
+                <li><a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp: +7 (911) 590-91-75</a></li>
+                <li><a href="mailto:info@klimat29.ru" className="hover:text-white transition-colors">info@klimat29.ru</a></li>
                 <li>Северодвинск, Архангельск, Новодвинск</li>
                 <li>Работаем круглосуточно</li>
               </ul>
