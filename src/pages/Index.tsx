@@ -12,7 +12,7 @@ const Index = () => {
       description: 'Монтаж настенных, кассетных и канальных кондиционеров любой сложности',
       icon: 'Settings',
       price: 'от 3 500 ₽',
-      features: ['Гарантия 3 года', 'Выезд в день заказа', 'Сертифицированные мастера']
+      features: ['Гарантия 1 год', 'Выезд в день заказа', 'Сертифицированные мастера']
     },
     {
       title: 'Обслуживание и чистка',
@@ -34,7 +34,7 @@ const Index = () => {
     {
       icon: 'Shield',
       title: 'Гарантия качества',
-      description: '3 года гарантии на монтажные работы'
+      description: '1 год гарантии на монтажные работы'
     },
     {
       icon: 'Clock',
@@ -126,7 +126,7 @@ const Index = () => {
                 <div className="flex items-center gap-3 p-4 bg-white rounded-lg border">
                   <Icon name="Shield" size={24} className="text-primary" />
                   <div>
-                    <div className="font-semibold text-gray-900">Гарантия 3 года</div>
+                    <div className="font-semibold text-gray-900">Гарантия 1 год</div>
                     <div className="text-sm text-gray-600">На все виды работ</div>
                   </div>
                 </div>
@@ -139,14 +139,18 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 bg-primary hover:bg-primary/90">
-                  <Icon name="Calculator" size={20} className="mr-2" />
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button size="lg" className="text-base px-6 bg-primary hover:bg-primary/90">
+                  <Icon name="Calculator" size={18} className="mr-2" />
                   Рассчитать стоимость
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 border-primary text-primary hover:bg-primary hover:text-white">
-                  <Icon name="Phone" size={20} className="mr-2" />
+                <Button variant="outline" size="lg" className="text-base px-6 border-primary text-primary hover:bg-primary hover:text-white">
+                  <Icon name="Phone" size={18} className="mr-2" />
                   Вызвать мастера
+                </Button>
+                <Button variant="outline" size="lg" className="text-base px-6 border-primary text-primary hover:bg-primary hover:text-white">
+                  <Icon name="MessageSquare" size={18} className="mr-2" />
+                  Заказать консультацию
                 </Button>
               </div>
             </div>
@@ -158,7 +162,7 @@ const Index = () => {
                   alt="Установка кондиционера" 
                   className="rounded-lg shadow-xl w-full h-[400px] object-cover"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-primary text-white rounded-lg p-4 shadow-lg">
+                <div className="absolute -bottom-4 -left-4 bg-primary text-white rounded-lg p-4 shadow-lg">
                   <div className="text-center">
                     <div className="text-2xl font-bold">2000+</div>
                     <div className="text-sm">установок</div>
