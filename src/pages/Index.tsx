@@ -131,12 +131,12 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Установка и обслуживание
-                <span className="block text-primary">кондиционеров</span>
+                Кондиционеры в Северодвинске и
+                <span className="block text-primary">установка в Архангельске</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Профессиональный монтаж, обслуживание и ремонт 
-                систем кондиционирования в Северодвинске, Архангельске и Новодвинске
+                Монтаж кондиционеров в Северодвинске, установка в Архангельске. 
+                Сплит-системы, ремонт и обслуживание кондиционеров
               </p>
               
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -218,9 +218,9 @@ const Index = () => {
       <section id="services" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Наши услуги</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Установка кондиционеров в Архангельске и Северодвинске</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Полный комплекс услуг по установке, обслуживанию и ремонту климатического оборудования
+              Кондиционеры в Северодвинске и монтаж сплит-систем в Архангельске. Профессиональные услуги по ремонту и обслуживанию
             </p>
           </div>
           
