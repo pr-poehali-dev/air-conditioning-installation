@@ -2,8 +2,19 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
 const Index = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+
   const cities = ['Северодвинск', 'Архангельск', 'Новодвинск'];
   
   const services = [
@@ -99,7 +110,13 @@ const Index = () => {
                 <div className="text-lg font-bold text-gray-900">+7 (8182) 123-45-67</div>
                 <div className="text-sm text-gray-500">{cities.join(' • ')}</div>
               </div>
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button 
+                onClick={() => {
+                  setSelectedService('Заказать звонок');
+                  setIsFormOpen(true);
+                }}
+                className="bg-primary hover:bg-primary/90"
+              >
                 <Icon name="Phone" size={16} className="mr-2" />
                 Заказать звонок
               </Button>
@@ -140,15 +157,38 @@ const Index = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button size="lg" className="text-base px-6 bg-primary hover:bg-primary/90">
+                <Button 
+                  size="lg" 
+                  className="text-base px-6 bg-primary hover:bg-primary/90"
+                  onClick={() => {
+                    setSelectedService('Рассчитать стоимость');
+                    setIsFormOpen(true);
+                  }}
+                >
                   <Icon name="Calculator" size={18} className="mr-2" />
                   Рассчитать стоимость
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-6 border-primary text-primary hover:bg-primary hover:text-white">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-base px-6 border-primary text-primary hover:bg-primary hover:text-white"
+                  onClick={() => {
+                    setSelectedService('Вызвать мастера');
+                    setIsFormOpen(true);
+                  }}
+                >
                   <Icon name="Phone" size={18} className="mr-2" />
                   Вызвать мастера
                 </Button>
-                <Button variant="outline" size="lg" className="text-base px-6 border-primary text-primary hover:bg-primary hover:text-white">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="text-base px-6 border-primary text-primary hover:bg-primary hover:text-white"
+                  onClick={() => {
+                    setSelectedService('Заказать консультацию');
+                    setIsFormOpen(true);
+                  }}
+                >
                   <Icon name="MessageSquare" size={18} className="mr-2" />
                   Заказать консультацию
                 </Button>
@@ -207,7 +247,14 @@ const Index = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                      onClick={() => {
+                        setSelectedService(service.title);
+                        setIsFormOpen(true);
+                      }}
+                    >
                       Заказать услугу
                     </Button>
                   </div>
@@ -307,38 +354,61 @@ const Index = () => {
             
             <div className="bg-white rounded-lg p-8 text-gray-900">
               <h3 className="text-2xl font-bold mb-6 text-center">Заказать консультацию</h3>
-              <form className="space-y-4">
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (!formData.name || !formData.phone) {
+                    toast.error('Заполните обязательные поля');
+                    return;
+                  }
+                  toast.success('Заявка отправлена! Мы свяжемся с вами в течение 15 минут.');
+                  setFormData({ name: '', phone: '', service: '', message: '' });
+                }}
+                className="space-y-4"
+              >
                 <div>
                   <input 
                     type="text" 
-                    placeholder="Ваше имя"
+                    placeholder="Ваше имя*"
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                    required
                   />
                 </div>
                 <div>
                   <input 
                     type="tel" 
-                    placeholder="Телефон"
+                    placeholder="Телефон*"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                    required
                   />
                 </div>
                 <div>
-                  <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
-                    <option>Выберите услугу</option>
-                    <option>Установка кондиционера</option>
-                    <option>Техническое обслуживание</option>
-                    <option>Ремонт кондиционера</option>
-                    <option>Консультация специалиста</option>
+                  <select 
+                    value={formData.service}
+                    onChange={(e) => setFormData({...formData, service: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                  >
+                    <option value="">Выберите услугу</option>
+                    <option value="Установка кондиционера">Установка кондиционера</option>
+                    <option value="Техническое обслуживание">Техническое обслуживание</option>
+                    <option value="Ремонт кондиционера">Ремонт кондиционера</option>
+                    <option value="Консультация специалиста">Консультация специалиста</option>
                   </select>
                 </div>
                 <div>
                   <textarea 
                     placeholder="Дополнительная информация"
                     rows={3}
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none"
                   ></textarea>
                 </div>
-                <Button className="w-full py-3 text-lg bg-primary hover:bg-primary/90">
+                <Button type="submit" className="w-full py-3 text-lg bg-primary hover:bg-primary/90">
                   <Icon name="Send" size={20} className="mr-2" />
                   Отправить заявку
                 </Button>
@@ -350,6 +420,75 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal Form */}
+      {isFormOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-gray-900">{selectedService}</h3>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => setIsFormOpen(false)}
+                className="p-2 h-8 w-8"
+              >
+                <Icon name="X" size={16} />
+              </Button>
+            </div>
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!formData.name || !formData.phone) {
+                  toast.error('Заполните обязательные поля');
+                  return;
+                }
+                toast.success('Заявка отправлена! Мы свяжемся с вами в течение 15 минут.');
+                setFormData({ name: '', phone: '', service: '', message: '' });
+                setIsFormOpen(false);
+              }}
+              className="space-y-4"
+            >
+              <div>
+                <input 
+                  type="text" 
+                  placeholder="Ваше имя*"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <input 
+                  type="tel" 
+                  placeholder="Телефон*"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <textarea 
+                  placeholder="Дополнительная информация"
+                  rows={3}
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none"
+                ></textarea>
+              </div>
+              <Button type="submit" className="w-full py-3 bg-primary hover:bg-primary/90">
+                <Icon name="Send" size={18} className="mr-2" />
+                Отправить заявку
+              </Button>
+              <p className="text-xs text-gray-500 text-center">
+                Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
