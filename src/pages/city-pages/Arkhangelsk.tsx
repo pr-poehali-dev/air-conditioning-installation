@@ -58,17 +58,17 @@ const ArkhangelskPage = () => {
                 onClick={() => setIsFormOpen(true)}
               >
                 <Icon name="Phone" size={18} className="mr-2" />
-                Заказать установку
+                Заказать звонок
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="text-base px-8 border-primary text-primary hover:bg-primary hover:text-white"
-                onClick={() => setIsFormOpen(true)}
+              <a 
+                href="https://wa.me/79115909175" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-12 text-base px-8 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white rounded-md transition-colors font-medium"
               >
-                <Icon name="Calculator" size={18} className="mr-2" />
-                Узнать цены
-              </Button>
+                <Icon name="MessageCircle" size={18} className="mr-2" />
+                WhatsApp
+              </a>
             </div>
           </div>
         </div>
@@ -106,13 +106,25 @@ const ArkhangelskPage = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-white"
-                      onClick={() => setIsFormOpen(true)}
-                    >
-                      Заказать
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button 
+                        variant="outline" 
+                        className="flex-1 border-primary text-primary hover:bg-primary hover:text-white"
+                        onClick={() => setIsFormOpen(true)}
+                      >
+                        <Icon name="Phone" size={16} className="mr-1" />
+                        Звонок
+                      </Button>
+                      <a 
+                        href="https://wa.me/79115909175" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center flex-1 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white rounded-md transition-colors text-sm font-medium"
+                      >
+                        <Icon name="MessageCircle" size={16} className="mr-1" />
+                        WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
