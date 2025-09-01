@@ -52,14 +52,13 @@ const ArkhangelskPage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="text-base px-8 bg-primary hover:bg-primary/90"
-                onClick={() => setIsFormOpen(true)}
+              <a 
+                href="tel:+79115909175"
+                className="inline-flex items-center justify-center h-12 text-base px-8 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors font-medium"
               >
                 <Icon name="Phone" size={18} className="mr-2" />
                 Заказать звонок
-              </Button>
+              </a>
               <a 
                 href="https://wa.me/79115909175" 
                 target="_blank" 
@@ -107,14 +106,13 @@ const ArkhangelskPage = () => {
                       ))}
                     </ul>
                     <div className="flex gap-2">
-                      <Button 
-                        variant="outline" 
-                        className="flex-1 border-primary text-primary hover:bg-primary hover:text-white"
-                        onClick={() => setIsFormOpen(true)}
+                      <a 
+                        href="tel:+79115909175"
+                        className="flex items-center justify-center flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-md transition-colors text-sm font-medium"
                       >
                         <Icon name="Phone" size={16} className="mr-1" />
                         Звонок
-                      </Button>
+                      </a>
                       <a 
                         href="https://wa.me/79115909175" 
                         target="_blank" 
