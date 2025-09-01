@@ -317,15 +317,15 @@ const Index = () => {
                     <div className="text-blue-100">+7 (911) 590-91-75</div>
                   </div>
                 </a>
-                <div className="flex items-center gap-4">
+                <a href="https://t.me/maxklimat29" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:bg-white/10 p-3 rounded-lg transition-colors">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <Icon name="Mail" size={24} className="text-white" />
+                    <Icon name="Send" size={24} className="text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">info@klimat29.ru</div>
-                    <div className="text-blue-100">Ответим в течение 30 минут</div>
+                    <div className="font-semibold text-lg">Приложение Max</div>
+                    <div className="text-blue-100">+7 (911) 590-91-75</div>
                   </div>
-                </div>
+                </a>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <Icon name="MapPin" size={24} className="text-white" />
@@ -508,7 +508,7 @@ const Index = () => {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="tel:+79115909175" className="hover:text-white transition-colors">+7 (911) 590-91-75</a></li>
                 <li><a href="https://wa.me/79115909175" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp: +7 (911) 590-91-75</a></li>
-                <li><a href="mailto:info@klimat29.ru" className="hover:text-white transition-colors">info@klimat29.ru</a></li>
+                <li><a href="https://t.me/maxklimat29" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Приложение Max: +7 (911) 590-91-75</a></li>
                 <li>Северодвинск, Архангельск, Новодвинск</li>
                 <li>Работаем круглосуточно</li>
               </ul>
